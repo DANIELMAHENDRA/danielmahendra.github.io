@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV - Tentang Saya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Animasi background bergerak */
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 1000px 1000px;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #f5f5dc;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+            background-color: #111;
+            background-size: 400px 400px;
+            animation: moveBackground 60s linear infinite;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 12px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+        }
+
+        nav a {
+            color: #f5f5dc;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            background-color: #00aaff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00aaff;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section#about {
+            padding: 120px 20px 60px;
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            background: url('background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 160, 255, 0.2);
+        }
+
+        section#about img {
+            flex: 1 1 250px;
+            max-width: 300px;
+            width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0, 160, 255, 0.2);
+            transition: transform 1s ease-in-out, opacity 1s ease;
+        }
+
+        section#about img:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        section#about .text {
+            flex: 2 1 400px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        section#about h2 {
+            font-size: 36px;
+            color: #00aaff;
+            margin-bottom: 20px;
+        }
+
+        section#about p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #f5f5dc;
+        }
+
+        .quote {
+            margin: 30px 0;
+            padding: 15px 20px;
+            background-color: #444;
+            border-left: 5px solid #00aaff;
+            font-style: italic;
+            border-radius: 8px;
+            color: #f5f5dc;
+        }
+
+        .skill-bar {
+            margin: 20px 0;
+        }
+
+        .skill-bar label {
+            font-weight: 600;
+            color: #00aaff;
+        }
+
+        .skill-bar .bar {
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .skill-bar .bar-fill {
+            height: 22px;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            width: 0;
+            animation: grow 2s ease forwards;
+            border-radius: 10px;
+        }
+
+        .fun-facts,
+        .timeline,
+        .testimoni {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 12px;
+        }
+
+        .fun-facts h3,
+        .timeline h3,
+        .testimoni h3 {
+            color: #00aaff;
+            margin-bottom: 15px;
+        }
+
+        .fun-facts ul,
+        .timeline ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .fun-facts li,
+        .timeline li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #f5f5dc;
+        }
+
+        .testimoni blockquote {
+            border-left: 5px solid #00bfff;
+            padding-left: 15px;
+            font-style: italic;
+            color: #f5f5dc;
+        }
+
+        .download-btn {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00aaff;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 122, 204, 0.3);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #0072ff;
+            transform: scale(1.05);
+        }
+
+        @keyframes grow {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 80%;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            section#about {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 90px;
+            }
+
+            section#about .text {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="home.html">Beranda</a>
+        <a href="tentangsaya.html">Tentang Saya</a>
+        <a href="pengalaman.html">Pengalaman</a>
+        <a href="portofolio.html">Portofolio</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <section id="about">
+        <img src="foto tentang saya.jpg" alt="Foto Saya" />
+        <div class="text" data-aos="fade-up" data-aos-duration="1000">
+            <h2>About Me!!</h2>
+            <p>
+                Halo! Saya <strong>Daniel Okto Mahendra Simarmata</strong>, seorang Mahasiswa dengan ketertarikan besar
+                dalam dunia teknologi, khususnya dalam pengembangan web dan aplikasi. Saya percaya bahwa teknologi dapat
+                membawa perubahan besar dalam kehidupan manusia, dan saya ingin menjadi bagian dari perubahan itu.
+            </p>
+
+            <div class="quote">
+                "Berpikir besar, mulai dari yang kecil, dan bertindak sekarang."
+            </div>
+
+            <a href="CV_Daniel.pdf" class="download-btn" download>📄 Unduh CV Saya</a>
+
+            <div class="fun-facts">
+                <h3>Fakta Menarik</h3>
+                <ul>
+                    <li>📚 Suka belajar dan mendapat pengetahuan baru</li>
+                    <li>💻 Telah membuat 8+ proyek web</li>
+                    <li>🌍 Suka traveling dan menemukan tempat-tempat menarik</li>
+                    <li>🎧 Suka mendengarkan musik</li>
+                </ul>
+            </div>
+
+            <div class="timeline">
+                <h3>Perjalanan Saya</h3>
+                <ul>
+                    <li><strong>2023 - Sekarang:</strong> Mahasiswa Ilmu Komputer di Universitas Lampung</li>
+                    <li><strong>2023:</strong> Mencoba mendaftar menjadi Abdi Negara</li>
+                    <li><strong>2022:</strong> Lulus SMA dengan nilai yang memuaskan</li>
+                </ul>
+            </div>
+
+            <div class="testimoni">
+                <h3>Kata Mereka Tentang Saya</h3>
+                <blockquote>
+                    “Daniel adalah sosok yang ulet, penuh semangat, dan selalu ingin belajar.” <br>— Dosen Pembimbing
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

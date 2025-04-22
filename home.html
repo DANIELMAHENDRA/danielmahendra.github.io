@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV - Beranda</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #f5deb3;
+            /* Mengubah warna teks utama menjadi krem */
+            background-color: #000;
+            /* Menambahkan latar belakang hitam untuk menjaga warna konten */
+        }
+
+        /* Navbar dengan efek hover animasi underline */
+        nav {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Membuat navbar semi-transparan agar gambar latar belakang masih terlihat */
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a {
+            color: #f5deb3;
+            /* Mengubah warna teks navbar menjadi krem */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            background-color: #1e90ff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1e90ff;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Section Home dengan background penuh */
+        section#home {
+            position: relative;
+            height: 100vh;
+            background-image: url('Profil Utama.jpg');
+            /* Ganti dengan file kamu */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Membuat overlay agar teks lebih mudah dibaca */
+        section#home::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        section#home .content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 2s ease;
+        }
+
+        section#home img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid white;
+        }
+
+        section#home h1 {
+            font-size: 36px;
+            margin: 10px 0 0 0;
+        }
+
+        section#home p.subtitle {
+            font-size: 20px;
+            margin: 5px 0 20px 0;
+        }
+
+        section#home h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        section#home p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        /* Efek fade in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mengoptimalkan tampilan untuk perangkat mobile */
+        @media (max-width: 768px) {
+            section#home h2 {
+                font-size: 32px;
+            }
+
+            section#home p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="home.html">Beranda</a>
+        <a href="tentangsaya.html">Tentang Saya</a>
+        <a href="pengalaman.html">Pengalaman</a>
+        <a href="Portofolio.html">Portofolio</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <!-- Section Home -->
+    <section id="home">
+        <div class="content">
+            <img src="Profil Utama.jpg" alt="Foto Profil" />
+            <h1>Daniel Okto Mahendra Simarmata</h1>
+            <p class="subtitle">Mahasiswa</p>
+            <h2>Halo, Saya Daniel</h2>
+            <p>Selamat datang di website pribadi saya. Saya adalah seorang Mahasiswa dengan minat pada pengembangan
+                situs dan aplikasi web. Website ini berisi informasi tentang saya.</p>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV - Kontak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Animasi background bergerak */
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 1000px 1000px;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #f5e3b3;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+            background-color: #111;
+            background-size: 400px 400px;
+            animation: moveBackground 60s linear infinite;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 12px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+        }
+
+        nav a {
+            color: #f5e3b3;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            background-color: #00aaff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00aaff;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section#contact {
+            padding: 120px 20px 80px;
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            animation: fadeInUp 1s ease;
+        }
+
+        section#contact h2 {
+            font-size: 36px;
+            color: #00aaff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        section#contact h2::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background-color: #00aaff;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 5px;
+        }
+
+        .intro-text {
+            max-width: 700px;
+            text-align: center;
+            font-size: 18px;
+            color: #ddd;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .contact-info div {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            min-width: 200px;
+        }
+
+        .contact-info i {
+            font-size: 26px;
+            color: #00aaff;
+            margin-right: 15px;
+        }
+
+        .contact-info p,
+        .contact-info a {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #f5e3b3;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            background-color: #2e2e2e;
+            padding: 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #555;
+            border-radius: 8px;
+            background-color: #333;
+            color: #f5e3b3;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        .contact-form input:hover,
+        .contact-form textarea:hover {
+            border-color: #00aaff;
+            background-color: #444;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .contact-form button {
+            padding: 12px 30px;
+            border: none;
+            background-color: #00aaff;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .contact-form button:hover {
+            background-color: #0088cc;
+        }
+
+        .contact-form #cancel-button {
+            background-color: #dc3545;
+        }
+
+        .contact-form #cancel-button:hover {
+            background-color: #c82333;
+        }
+
+        .contact-form .status {
+            font-size: 16px;
+            color: #28a745;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        blockquote {
+            font-style: italic;
+            text-align: center;
+            color: #ccc;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info div {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .contact-info i {
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="home.html">Beranda</a>
+        <a href="tentangsaya.html">Tentang Saya</a>
+        <a href="pengalaman.html">Pengalaman</a>
+        <a href="portofolio.html">Portofolio</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <!-- Section Kontak -->
+    <section id="contact">
+        <h2>Hubungi Saya</h2>
+        <p class="intro-text">Jangan ragu untuk menghubungi saya melalui form di bawah ini atau langsung lewat kontak
+            yang tersedia. Saya akan membalas secepat mungkin!</p>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <div>
+                <i class="fas fa-phone-alt"></i>
+                <p>+62 857 6875 1198</p>
+            </div>
+            <div>
+                <i class="fas fa-envelope"></i>
+                <p>mobiledaniel215@gmail.com</p>
+            </div>
+            <div>
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Jl. Raya No. 123, Yos Sudarso, Indonesia</p>
+            </div>
+            <div>
+                <i class="fab fa-instagram"></i>
+                <p><a href="https://www.instagram.com/dniel_mhendra" target="_blank">@dniel_mhendra</a></p>
+            </div>
+            <div>
+                <i class="fab fa-linkedin"></i>
+                <p><a href="https://linkedin.com/in/namamu" target="_blank">LinkedIn</a></p>
+            </div>
+            <div>
+                <i class="fab fa-github"></i>
+                <p><a href="https://github.com/namamu" target="_blank">GitHub</a></p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Nama Lengkap" required />
+                <input type="email" id="email" placeholder="Email" required />
+                <textarea id="message" placeholder="Pesan" rows="4" required></textarea>
+                <button type="submit">Kirim Pesan</button>
+                <button type="button" id="cancel-button">Batal</button>
+                <div class="status" id="status"></div>
+            </form>
+        </div>
+
+        <blockquote>"Saya percaya komunikasi adalah awal dari kolaborasi yang luar biasa."</blockquote>
+    </section>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const status = document.getElementById('status');
+
+            if (name && email && message) {
+                status.textContent = 'Pesan berhasil dikirim! Terima kasih telah menghubungi saya.';
+                status.style.color = '#28a745';
+                document.getElementById('contact-form').reset();
+            } else {
+                status.textContent = 'Tolong isi semua kolom sebelum mengirim.';
+                status.style.color = '#dc3545';
+            }
+        });
+
+        document.getElementById('cancel-button').addEventListener('click', function () {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const status = document.getElementById('status');
+
+            if (name || email || message) {
+                status.textContent = 'Gagal mengirim pesan. Form tidak dikirim!';
+                status.style.color = '#dc3545';
+            }
+            document.getElementById('contact-form').reset();
+        });
+    </script>
+
+</body>
+
+</html>
